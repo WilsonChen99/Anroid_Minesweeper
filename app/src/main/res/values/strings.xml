@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CS310 --- Wilson Chen</string>
+    <string name="top_flag_description">Icon for the remaining unexplored bomb counts</string>
+    <string name="top_clock_description">Icon for the elapsed time since start</string>
+    <string name="play_again">PLAY AGAIN</string>
+</resources>
