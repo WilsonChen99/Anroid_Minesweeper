@@ -2,6 +2,7 @@ package com.example.minesweeper;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -226,6 +227,7 @@ public class Game {
     }
 
     // Used to reveal all cells on win or lose
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void onReveal(Cell cell)
     {
         if(!cell.getIsShoveled())
