@@ -20,12 +20,12 @@ import java.util.Set;
 
 public class Game {
     // Top left textview of the main activity, prompting how many mines are there
-    private TextView mRemainingMineView;
-    private GridLayout mGridLayout;
-    private Context mContext;
-    private ImageButton mGameModeBttn;
+    final private TextView mRemainingMineView;
+    final private GridLayout mGridLayout;
+    final private Context mContext;
+    final private ImageButton mGameModeBttn;
     // Should be passed into constructor. Start when game start. Stop when victory or lose
-    private Timer mTimer;
+    final private Timer mTimer;
     // The amount of mines/remaining mines for this game
     private int mMines;
     public int mRemainingMines;
@@ -34,9 +34,9 @@ public class Game {
     // true: shovel; false: flag
     private boolean mGameMode;
     // Containing all the cells in the grid system for all operations
-    private HashMap<TextView, Cell> mCells;
+    final private HashMap<TextView, Cell> mCells;
     // Containing all the textview in the arraylist, used to do search in order
-    private ArrayList<TextView> mCellsArr;
+    final private ArrayList<TextView> mCellsArr;
     // Custom utility class for needed functionalities
     private final Util mUtil = new Util();
 
@@ -277,13 +277,6 @@ public class Game {
             mGameMode = true;
             mGameModeBttn.setImageResource(R.drawable.icon_shovel);
         }
-    }
-
-
-    // [ Getters ] =================================================================================
-    public int getGameStatus()
-    {
-        return mStatus;
     }
 
     // [ Setters ] =================================================================================
