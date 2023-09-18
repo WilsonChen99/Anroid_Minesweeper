@@ -86,6 +86,18 @@ public class Game {
                 onClickFlag(clickedCell);
             }
 
+            // Check the possibility of winning at the first click
+            if(mCells.size() - mUtil.GetShoveledCount() - mMines == 0)
+            {
+                // Update the game status to win
+                mStatus = 2;
+                mTimer.onClickEnd();
+                // Reveal all bombs to victory icon
+                for(Cell cell: mCells.values()) {
+                    onReveal(cell);
+                }
+            }
+
         }
         // If the game is active
         else if(mStatus == 1)
