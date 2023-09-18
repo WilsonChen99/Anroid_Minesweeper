@@ -249,7 +249,7 @@ public class Game {
                 // Check if the cell is flagged, we want to displace the flag with an X
                 if(cell.getIsFlagged())
                 {
-                    cell.getTextView().setBackground(mContext.getDrawable(R.drawable.icon_redx));
+                    cell.getTextView().setBackground(mContext.getDrawable(R.drawable.icon_wrong_flag));
                 }
                 // Check if the cell has a number
                 else if(cell.getMinesAround() != 0)
