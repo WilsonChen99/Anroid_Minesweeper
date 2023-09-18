@@ -85,18 +85,8 @@ public class Game {
             {
                 onClickFlag(clickedCell);
             }
-
-            // Check the possibility of winning at the first click
-            if(mCells.size() - mUtil.GetShoveledCount() - mMines == 0)
-            {
-                // Update the game status to win
-                mStatus = 2;
-                mTimer.onClickEnd();
-                // Reveal all bombs to victory icon
-                for(Cell cell: mCells.values()) {
-                    onReveal(cell);
-                }
-            }
+            // Check the possibility of win on first click
+            checkWin();
 
         }
         // If the game is active
@@ -127,18 +117,7 @@ public class Game {
 
                 // If the clicked cell is not yet shoveled and valid, process it
                 onClickShovel(clickedCell);
-
-                // If this is the last valid cell to be shoveled, player wins
-                if(mCells.size() - mUtil.GetShoveledCount() - mMines == 0)
-                {
-                    // Update the game status to win
-                    mStatus = 2;
-                    mTimer.onClickEnd();
-                    // Reveal all bombs to victory icon
-                    for(Cell cell: mCells.values()) {
-                        onReveal(cell);
-                    }
-                }
+                checkWin();
             }
             // mGameMode == false: flag
             else
@@ -172,6 +151,19 @@ public class Game {
         }
     }
 
+    private void checkWin()
+    {
+        if(mCells.size() - mUtil.GetShoveledCount() - mMines == 0)
+        {
+            // Update the game status to win
+            mStatus = 2;
+            mTimer.onClickEnd();
+            // Reveal all bombs to victory icon
+            for(Cell cell: mCells.values()) {
+                onReveal(cell);
+            }
+        }
+    }
 
     private void onClickStart()
     {
