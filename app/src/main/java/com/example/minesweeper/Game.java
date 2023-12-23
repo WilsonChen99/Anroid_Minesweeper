@@ -172,10 +172,8 @@ public class Game {
         mStatus = 1;
         // Only start the timer when the game is first initiated
         mTimer.onClickStart();
-        // On start, randomly set the mines count from 5 to 10
-        // mMines = mUtil.RandomNumGenerator(8, 12);
-        // For this lab statically set the number of mines to 4.
-        mMines = 4;
+        // On start, randomly set the mines count from 5 to 12
+        mMines = mUtil.RandomNumGenerator(5, 12);
         mRemainingMines = mMines;
         setRemainingMineView();
         // Set up mines in randomly selected cells
@@ -357,7 +355,6 @@ public class Game {
                 lp.columnSpec = GridLayout.spec(j);
 
                 mGridLayout.addView(tv, lp);
-
                 // Adding the current text view to the map for later operations
                 mCells.put(tv, new Cell(tv, false, false, false, 0));
                 // Adding the current text view to an array as well, so that we can use the order
